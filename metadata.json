@@ -1,0 +1,8 @@
+{
+  "name": "Dessert Factory @13",
+  "description": "Dessert Factory @13 in Vijayawada: Artisanal Dubai-style desserts, famous Apricot Delight, cheesecakes, pizzas, and burgers with social sharing and online ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
