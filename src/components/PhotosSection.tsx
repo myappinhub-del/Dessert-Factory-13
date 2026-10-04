@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Camera, Eye, Share2, X, Sparkles, Video, Compass } from 'lucide-react';
 import { PhotoItem } from '../types';
 import { PHOTOS_LIST } from '../data/mockData';
+import { IMAGES, resolveImagePath } from '../assets/images';
 import { createWhatsAppShareUrl, getAppShareUrl } from '../utils/shareUtils';
 
 interface PhotosSectionProps {
@@ -82,10 +83,13 @@ export const PhotosSection: React.FC<PhotosSectionProps> = ({
             className="group relative aspect-square rounded-2xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer shadow-2xs hover:shadow-md transition-all"
           >
             <img
-              src={photo.url}
+              src={resolveImagePath(photo.url)}
               alt={photo.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               referrerPolicy="no-referrer"
+              onError={(e) => {
+                e.currentTarget.src = IMAGES.hero;
+              }}
             />
             {/* Scrim Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
@@ -132,10 +136,13 @@ export const PhotosSection: React.FC<PhotosSectionProps> = ({
             {/* Image display */}
             <div className="max-h-[65vh] overflow-hidden flex items-center justify-center bg-black">
               <img
-                src={selectedPhoto.url}
+                src={resolveImagePath(selectedPhoto.url)}
                 alt={selectedPhoto.title}
                 className="max-h-[65vh] w-auto object-contain"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.src = IMAGES.hero;
+                }}
               />
             </div>
 

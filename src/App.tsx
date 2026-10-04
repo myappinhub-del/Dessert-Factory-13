@@ -19,6 +19,7 @@ import { WriteReviewModal } from './components/WriteReviewModal';
 import { OrderCartDrawer } from './components/OrderCartDrawer';
 import { PLACE_DETAILS, MENU_ITEMS, PHOTOS_LIST } from './data/mockData';
 import { MenuItem, CartItem, Review, PlaceDetails, PhotoItem } from './types';
+import { IMAGES, resolveImagePath } from './assets/images';
 import { Share2, Navigation, ShoppingBag, Bookmark, Heart, Sparkles, MapPin, Phone, ShieldCheck, Settings } from 'lucide-react';
 import { SwiggyIcon } from './components/SwiggyIcon';
 import { AdminLoginModal } from './components/AdminLoginModal';
@@ -45,11 +46,18 @@ export default function App() {
     }
   });
 
-  // Dynamic Editable Data (persisted in localStorage)
+  // Dynamic Editable Data (persisted in localStorage, auto-sanitizing image URLs for production)
   const [placeDetails, setPlaceDetails] = useState<PlaceDetails>(() => {
     try {
       const saved = localStorage.getItem('df13_place_details');
-      return saved ? JSON.parse(saved) : PLACE_DETAILS;
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        return {
+          ...parsed,
+          heroImage: resolveImagePath(parsed.heroImage || IMAGES.hero),
+        };
+      }
+      return PLACE_DETAILS;
     } catch {
       return PLACE_DETAILS;
     }
@@ -58,7 +66,14 @@ export default function App() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>(() => {
     try {
       const saved = localStorage.getItem('df13_menu_items');
-      return saved ? JSON.parse(saved) : MENU_ITEMS;
+      if (saved) {
+        const parsed: MenuItem[] = JSON.parse(saved);
+        return parsed.map((item) => ({
+          ...item,
+          image: resolveImagePath(item.image),
+        }));
+      }
+      return MENU_ITEMS;
     } catch {
       return MENU_ITEMS;
     }
@@ -67,7 +82,14 @@ export default function App() {
   const [photosList, setPhotosList] = useState<PhotoItem[]>(() => {
     try {
       const saved = localStorage.getItem('df13_photos');
-      return saved ? JSON.parse(saved) : PHOTOS_LIST;
+      if (saved) {
+        const parsed: PhotoItem[] = JSON.parse(saved);
+        return parsed.map((photo) => ({
+          ...photo,
+          url: resolveImagePath(photo.url),
+        }));
+      }
+      return PHOTOS_LIST;
     } catch {
       return PHOTOS_LIST;
     }
@@ -355,7 +377,7 @@ export default function App() {
                         description: 'A sweet treat packed with the natural goodness of apricots, perfect for a bite.',
                         rating: 4.9,
                         reviewCount: 56,
-                        image: '/src/assets/images/apricot_delight_dessert_1791130974213.jpg',
+                        image: IMAGES.apricotDelight,
                         isVegetarian: true,
                         tags: ['Special Item', 'Bestseller', 'Apricot Delight', 'Veg']
                       })}
@@ -406,7 +428,7 @@ export default function App() {
                         description: 'Soft and creamy pineapple cake, perfect for celebrations and sharing.',
                         rating: 4.1,
                         reviewCount: 6,
-                        image: '/src/assets/images/cool_cake_celebration_1791132683933.jpg',
+                        image: IMAGES.coolCake,
                         isVegetarian: false,
                         isBestseller: true,
                         tags: ['Cool cake', '1 Kg', 'Bestseller', 'Non-veg']

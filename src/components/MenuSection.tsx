@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Search, Plus, Share2, Star, Sparkles, Check, ExternalLink } from 'lucide-react';
 import { MenuItem, PlaceDetails } from '../types';
 import { MENU_ITEMS, PLACE_DETAILS, SWIGGY_ORDER_URL } from '../data/mockData';
+import { IMAGES, resolveImagePath } from '../assets/images';
 import { SwiggyIcon } from './SwiggyIcon';
 
 interface MenuSectionProps {
@@ -170,12 +171,12 @@ export const MenuSection: React.FC<MenuSectionProps> = ({
                 {/* Image Container with Fallback */}
                 <div className="relative aspect-[4/3] bg-stone-100 overflow-hidden">
                   <img
-                    src={item.image}
+                    src={resolveImagePath(item.image)}
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
-                      e.currentTarget.src = "/src/assets/images/hero_dessert_factory_1791130942756.jpg";
+                      e.currentTarget.src = IMAGES.coolCake;
                     }}
                   />
 

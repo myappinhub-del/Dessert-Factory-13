@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { PLACE_DETAILS } from '../data/mockData';
 import { PlaceDetails } from '../types';
+import { IMAGES, resolveImagePath } from '../assets/images';
 import { BrandLogo } from './BrandLogo';
 import { SwiggyIcon } from './SwiggyIcon';
 
@@ -52,10 +53,13 @@ export const HeroOverview: React.FC<HeroOverviewProps> = ({
       {/* Top Visual Showcase / Hero Banner */}
       <div className="relative h-64 md:h-84 w-full overflow-hidden bg-stone-900">
         <img
-          src="/src/assets/images/hero_dessert_factory_1791130942756.jpg"
+          src={resolveImagePath(placeDetails.heroImage || IMAGES.hero)}
           alt="Dessert Factory @13 artisanal desserts spread"
           className="w-full h-full object-cover opacity-90"
           referrerPolicy="no-referrer"
+          onError={(e) => {
+            e.currentTarget.src = IMAGES.hero;
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent" />
 

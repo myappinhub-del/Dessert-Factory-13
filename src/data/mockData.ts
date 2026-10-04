@@ -1,4 +1,5 @@
 import { PlaceDetails, MenuItem, Review, PhotoItem, CompetitorPlace } from '../types';
+import { IMAGES } from '../assets/images';
 
 export const SWIGGY_ORDER_URL = "https://www.swiggy.com/city/vijayawada/dessert-factory-13-governorpet-rest1228178?utm_source=GooglePlaceOrder&utm_campaign=GoogleMap&is_retargeting=true&media_source=GooglePlaceOrder";
 
@@ -38,7 +39,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Soft and creamy pineapple cake, perfect for celebrations and sharing.",
     rating: 4.1,
     reviewCount: 6,
-    image: "/src/assets/images/cool_cake_celebration_1791132683933.jpg",
+    image: IMAGES.coolCake,
     isBestseller: true,
     isVegetarian: false,
     tags: ["Cool cake", "1 Kg", "Bestseller", "Non-veg"],
@@ -52,7 +53,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "A soft and creamy strawberry cake that's perfect for any celebration or sweet craving.",
     rating: 4.3,
     reviewCount: 8,
-    image: "/src/assets/images/cool_cake_celebration_1791132683933.jpg",
+    image: IMAGES.coolCake,
     isBestseller: true,
     isVegetarian: false,
     tags: ["Cool cake", "1 Kg", "Bestseller", "Non-veg"],
@@ -66,7 +67,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Luscious strawberry cool cake with creamy layers, made fresh.",
     rating: 4.2,
     reviewCount: 5,
-    image: "/src/assets/images/cool_cake_celebration_1791132683933.jpg",
+    image: IMAGES.coolCake,
     isBestseller: false,
     isVegetarian: false,
     tags: ["Cool cake", "1 Kg", "Non-veg"],
@@ -80,7 +81,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Freshly layered tropical pineapple cool cake with juicy fruit notes.",
     rating: 4.2,
     reviewCount: 7,
-    image: "/src/assets/images/cool_cake_celebration_1791132683933.jpg",
+    image: IMAGES.coolCake,
     isBestseller: false,
     isVegetarian: false,
     tags: ["Cool cake", "1 Kg", "Non-veg"],
@@ -94,7 +95,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Pure vegetarian eggless pineapple cool cake with rich whipped cream and fruit infusion.",
     rating: 4.5,
     reviewCount: 14,
-    image: "/src/assets/images/cool_cake_celebration_1791132683933.jpg",
+    image: IMAGES.coolCake,
     isBestseller: false,
     isVegetarian: true,
     tags: ["Eggless", "Half Kg", "Veg"],
@@ -108,7 +109,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Eggless butterscotch cool cake crowned with crunchy caramelized praline nuts and sweet butterscotch syrup.",
     rating: 4.6,
     reviewCount: 18,
-    image: "/src/assets/images/cool_cake_celebration_1791132683933.jpg",
+    image: IMAGES.coolCake,
     isBestseller: false,
     isVegetarian: true,
     tags: ["Butterscotch", "Eggless", "Half Kg", "Veg"],
@@ -122,7 +123,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Soft eggless strawberry cool cake crafted with fresh berry compote and whipped cream frosting.",
     rating: 4.4,
     reviewCount: 12,
-    image: "/src/assets/images/cool_cake_celebration_1791132683933.jpg",
+    image: IMAGES.coolCake,
     isBestseller: false,
     isVegetarian: true,
     tags: ["Strawberry", "Eggless", "Half Kg", "Veg"],
@@ -136,7 +137,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Classic eggless black forest cool cake loaded with rich dark chocolate shavings and sweet cherries.",
     rating: 4.8,
     reviewCount: 29,
-    image: "/src/assets/images/death_by_chocolate_1791132720153.jpg",
+    image: IMAGES.deathByChocolate,
     isBestseller: true,
     isVegetarian: true,
     tags: ["Black Forest", "Eggless", "Bestseller", "Veg"],
@@ -150,7 +151,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Silky white chocolate curls layered over soft vanilla sponge with maraschino cherries, 100% eggless.",
     rating: 4.6,
     reviewCount: 16,
-    image: "/src/assets/images/lotus_biscoff_cheesecake_1791130986909.jpg",
+    image: IMAGES.lotusBiscoff,
     isBestseller: false,
     isVegetarian: true,
     tags: ["White Forest", "Eggless", "Half Kg", "Veg"],
@@ -164,7 +165,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Decadent eggless dark chocolate sponge coated in smooth ganache and loaded with crunchy chocolate chips.",
     rating: 4.7,
     reviewCount: 21,
-    image: "/src/assets/images/death_by_chocolate_1791132720153.jpg",
+    image: IMAGES.deathByChocolate,
     isBestseller: false,
     isVegetarian: true,
     tags: ["Choco Chip", "Eggless", "Half Kg", "Veg"],
@@ -180,7 +181,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Tres leches style ultra-moist sponge soaked in aromatic pistachio infused saffron milk, topped with cream and crushed nuts.",
     rating: 4.8,
     reviewCount: 31,
-    image: "/src/assets/images/pistachio_milk_cake_1791132704325.jpg",
+    image: IMAGES.pistachioMilkCake,
     isBestseller: false,
     isVegetarian: true,
     tags: ["Milk Cake", "Pistachio", "Tres Leches", "Veg"],
@@ -194,7 +195,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Rich soaked milk cake crowned with crushed crispy KitKat wafer bars and chocolate ganache drizzle.",
     rating: 4.7,
     reviewCount: 26,
-    image: "/src/assets/images/pistachio_milk_cake_1791132704325.jpg",
+    image: IMAGES.pistachioMilkCake,
     isBestseller: false,
     isVegetarian: true,
     tags: ["Milk Cake", "KitKat", "Crunchy", "Veg"],
@@ -208,7 +209,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Velvety soaked milk cake infused with slow-roasted hazelnut praline and whipped cream.",
     rating: 4.6,
     reviewCount: 19,
-    image: "/src/assets/images/pistachio_milk_cake_1791132704325.jpg",
+    image: IMAGES.pistachioMilkCake,
     isBestseller: false,
     isVegetarian: true,
     tags: ["Milk Cake", "Hazelnut", "Nutty", "Veg"],
@@ -224,7 +225,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "A sweet treat packed with the natural goodness of apricots, perfect for a bite.",
     rating: 4.9,
     reviewCount: 56,
-    image: "/src/assets/images/apricot_delight_dessert_1791130974213.jpg",
+    image: IMAGES.apricotDelight,
     isBestseller: true,
     isVegetarian: true,
     tags: ["Special Item", "Bestseller", "Apricot Delight", "Veg"],
@@ -238,7 +239,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: "Ultimate chocolate indulgence featuring rich chocolate sponge, hot fudge sauce, scoops of ice cream and nuts.",
     rating: 4.8,
     reviewCount: 44,
-    image: "/src/assets/images/death_by_chocolate_1791132720153.jpg",
+    image: IMAGES.deathByChocolate,
     isBestseller: false,
     isVegetarian: true,
     tags: ["Special Item", "DBC", "Chocoholic", "Veg"],
@@ -258,8 +259,8 @@ export const REVIEWS_DATA: Review[] = [
     likes: 18,
     tags: ["apricot delight", "ambience", "unique experience"],
     photos: [
-      "/src/assets/images/apricot_delight_dessert_1791130974213.jpg",
-      "/src/assets/images/dessert_cafe_ambience_1791131003996.jpg"
+      IMAGES.apricotDelight,
+      IMAGES.cafeAmbience
     ],
     responseFromOwner: {
       date: "8 months ago",
@@ -277,8 +278,8 @@ export const REVIEWS_DATA: Review[] = [
     likes: 31,
     tags: ["Dubai chocolate", "cheese cake", "unique experience"],
     photos: [
-      "/src/assets/images/dubai_pistachio_chocolate_1791130956868.jpg",
-      "/src/assets/images/lotus_biscoff_cheesecake_1791130986909.jpg"
+      IMAGES.dubaiPistachio,
+      IMAGES.lotusBiscoff
     ],
     responseFromOwner: {
       date: "9 months ago",
@@ -323,56 +324,56 @@ export const PHOTOS_LIST: PhotoItem[] = [
     id: "photo-1",
     category: "food",
     title: "Signature Dessert Collection",
-    url: "/src/assets/images/hero_dessert_factory_1791130942756.jpg",
+    url: IMAGES.hero,
     author: "Dessert Factory @13"
   },
   {
     id: "photo-2",
     category: "food",
     title: "Viral Dubai Pistachio Kunafa Chocolate",
-    url: "/src/assets/images/dubai_pistachio_chocolate_1791130956868.jpg",
+    url: IMAGES.dubaiPistachio,
     author: "Prasanth P"
   },
   {
     id: "photo-3",
     category: "food",
     title: "Traditional Apricot Delight Platter",
-    url: "/src/assets/images/apricot_delight_dessert_1791130974213.jpg",
+    url: IMAGES.apricotDelight,
     author: "Shaik azila tabusam"
   },
   {
     id: "photo-4",
     category: "food",
     title: "Lotus Biscoff Baked Cheesecake",
-    url: "/src/assets/images/lotus_biscoff_cheesecake_1791130986909.jpg",
+    url: IMAGES.lotusBiscoff,
     author: "Dessert Factory @13"
   },
   {
     id: "photo-5",
     category: "vibe",
     title: "Cafe Interior & Seating Ambience",
-    url: "/src/assets/images/dessert_cafe_ambience_1791131003996.jpg",
+    url: IMAGES.cafeAmbience,
     author: "Owner"
   },
   {
     id: "photo-6",
     category: "menu",
     title: "Specialties & Dessert Menu",
-    url: "/src/assets/images/hero_dessert_factory_1791130942756.jpg",
+    url: IMAGES.hero,
     author: "Dessert Factory @13"
   },
   {
     id: "photo-7",
     category: "owner",
     title: "Artisanal Kitchen & Fresh Daily Bakes",
-    url: "/src/assets/images/dessert_cafe_ambience_1791131003996.jpg",
+    url: IMAGES.cafeAmbience,
     author: "Owner"
   },
   {
     id: "photo-8",
     category: "360",
     title: "360° View of MG Road Storefront",
-    url: "/src/assets/images/dessert_cafe_ambience_1791131003996.jpg",
+    url: IMAGES.cafeAmbience,
     author: "Google Street View"
   }
 ];
